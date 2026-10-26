@@ -3,6 +3,8 @@ import CabinsList from "@/app/_components/CabinsList";
 import Spinner from "@/app/_components/Spinner";
 import Filter from "@/app/_components/Filter";
 
+import ReservationReminder from "@/app/_components/ReservationReminder";
+
 export default function Page({ searchParams }) {
 
     const capacityFilter = searchParams?.capacity ?? 'all';
@@ -28,6 +30,7 @@ export default function Page({ searchParams }) {
 
             <Suspense fallback={<Spinner />} key={capacityFilter}>
                 <CabinsList capacity={capacityFilter} />
+                <ReservationReminder />
             </Suspense>
 
 

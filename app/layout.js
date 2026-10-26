@@ -1,7 +1,8 @@
 import "@/app/_styles/globals.css"
 import { Josefin_Sans } from "next/font/google"
-
 import Header from "@/app/_components/Header";
+
+import { DateRangeContextProvider } from "@/app/_components/DateRangeContext";
 
 
 const Josefin = Josefin_Sans({
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="flex-1 px-8 py-12 grid">
           <main className="max-w-7xl mx-auto w-full">
-            {children}
+            <DateRangeContextProvider>
+              {children}
+            </DateRangeContextProvider>
           </main>
         </div>
       </body>
